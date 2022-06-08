@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(title: const Text('Quick Attendance')),
-          body: const Center(child: Text('Welcome to Quick Attendance!'))),
+          body: const Center(child: Text('Welcome !'))),
     );
   }
 }
