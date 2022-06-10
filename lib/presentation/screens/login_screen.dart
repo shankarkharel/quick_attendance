@@ -21,6 +21,8 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text("Please Log In", style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600,), textAlign: TextAlign.center,),
+            marginSpace(vertical: 30),
             const Hero(
               tag: 'personIcon',
               child: RoundedPersonIcon(
