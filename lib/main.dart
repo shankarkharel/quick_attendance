@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
+import 'package:quick_attendance/presentation/screens/splash_screen.dart';
 
 void main() {
   runApp(const QuickAttendance());
@@ -17,7 +16,7 @@ class QuickAttendance extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }
