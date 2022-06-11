@@ -4,14 +4,14 @@ import 'package:quick_attendance/presentation/components/widgets/rounded_grey_sh
 import 'package:quick_attendance/presentation/components/widgets/rounded_person_icon.dart';
 import 'package:quick_attendance/presentation/utils/reusables.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Please Log In", style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600,), textAlign: TextAlign.center,),
+            const Text("Register", style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600,), textAlign: TextAlign.center,),
             marginSpace(vertical: 30),
             const Hero(
               tag: 'personIcon',
