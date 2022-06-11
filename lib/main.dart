@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
+import 'package:quick_attendance/home_page.dart';
 
 void main() {
   runApp(const QuickAttendance());
