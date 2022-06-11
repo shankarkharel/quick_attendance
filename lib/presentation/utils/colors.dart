@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 // Button
 
 var kButtonColor = Colors.grey;
@@ -22,3 +23,17 @@ var kRoundedPersonBgColor = Colors.grey; // bg color
 var kTextFieldFillColor = Colors.grey;
 
 var kTextFieldHintTextColor = Colors.black;
+
+// Bottom Navigation Bar
+
+var kBottomBarBackgroundColor = Colors.blue;
+
+var kBottomBarSelectedColor = Colors.white;
+
+var kBottomBarUnselectedColor = Colors.blueGrey;
+
+// QR Code Floating Button
+
+var kQRScanButtonBgColor = Colors.blue;
+
+var kQRScanButtonColor = Colors.white;
