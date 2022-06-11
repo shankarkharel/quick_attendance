@@ -4,6 +4,7 @@ import 'package:quick_attendance/presentation/components/widgets/rounded_grey_sh
 import 'package:quick_attendance/presentation/components/widgets/rounded_person_icon.dart';
 import 'package:quick_attendance/presentation/screens/register_screen.dart';
 import 'package:quick_attendance/presentation/utils/reusables.dart';
+import 'package:quick_attendance/presentation/utils/styles.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -23,12 +24,9 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               "Please Log In",
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.w600,
-              ),
+              style: kHeaderTextStyle,
               textAlign: TextAlign.center,
             ),
             marginSpace(vertical: 30),

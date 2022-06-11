@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quick_attendance/home_page.dart';
-import 'package:quick_attendance/presentation/screens/splash_screen.dart';
 
 void main() {
   runApp(const QuickAttendance());
