@@ -27,8 +27,8 @@ class RoundedGreyShadowedButton extends StatelessWidget {
         child: Center(
             child: Text(
           text,
-          style: const TextStyle(
-              color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: kButtonTextColor, fontSize: 18, fontWeight: FontWeight.bold),
         )),
       ),
     );

@@ -16,9 +16,10 @@ class RoundedPersonIcon extends StatelessWidget {
       child: Icon(
         Icons.person,
         size: size,
+        color: kRoundedPersonIconColor,
       ),
       decoration: BoxDecoration(
-        color: kRoundedPersonIconColor,
+        color: kRoundedPersonBgColor,
         shape: BoxShape.circle,
       ),
     );
