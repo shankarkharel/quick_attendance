@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quick_attendance/presentation/components/widgets/input_field_widget.dart';
-import 'package:quick_attendance/presentation/components/widgets/rounded_grey_shadowed_button.dart';
+import 'package:quick_attendance/presentation/components/widgets/custom_form_field.dart';
+import 'package:quick_attendance/presentation/components/widgets/neumorphic_button.dart';
 import 'package:quick_attendance/presentation/components/widgets/rounded_person_icon.dart';
-import 'package:quick_attendance/presentation/screens/register_screen.dart';
 import 'package:quick_attendance/presentation/utils/reusables.dart';
 import 'package:quick_attendance/presentation/utils/styles.dart';
 
@@ -14,8 +13,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Padding(
@@ -36,33 +39,48 @@ class _LoginScreenState extends State<LoginScreen> {
                 size: 120,
               ),
             ),
-            marginSpace(vertical: 30),
-            const InputFieldWidget(
-              hintText: 'Email',
-            ),
-            marginSpace(vertical: 10),
-            const InputFieldWidget(
-              hintText: 'Password',
-              isPassword: true,
-            ),
+            marginSpace(vertical: screenSize.height * 0.06),
             marginSpace(vertical: 20),
-            RoundedGreyShadowedButton(
-              text: 'Log In',
-              onTap: () {},
-            ),
-            marginSpace(vertical: 20),
-            TextButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const RegisterScreen(),
+            Form(
+              key: formKey,
+              child: Column(
+                children: [
+                  const CustomTextFormField(
+                    label: 'Enter Your Email',
+                    errorText: 'Please  email corect Email',
+                    regExpSrc:
+                        r'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$',
                   ),
-                );
-              },
-              child: const Text(
-                "Don't have an Account? Register",
-                style: TextStyle(fontSize: 17),
+                  marginSpace(vertical: screenSize.height * 0.06),
+                  const CustomTextFormField(
+                    label: 'Enter Your Password',
+                    errorText: 'Please  enter a password at least 5 characters',
+                    regExpSrc: r'^.{5,}$',
+                  ),
+                  marginSpace(vertical: 20),
+                  Row(
+                    children: [
+                      const Text(
+                        "Login",
+                        style: TextStyle(color: Colors.blue, fontSize: 22),
+                      ),
+                      const Spacer(),
+                      CustomNeumorphicButton(
+                        formKey: formKey,
+                        screen: '/home',
+                      ),
+                    ],
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/register');
+                    },
+                    child: const Text(
+                      "Don't have an Account? Register",
+                      style: TextStyle(fontSize: 17),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

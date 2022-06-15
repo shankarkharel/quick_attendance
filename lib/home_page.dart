@@ -9,9 +9,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int _selectedIndex = 0;
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: const Text('Quick Attendance')),
         body: Center(
           child: Column(
             children: [
@@ -41,19 +41,26 @@ class HomePage extends StatelessWidget {
             canvasColor: kBottomBarBackgroundColor,
           ),
           child: BottomNavigationBar(
-            selectedItemColor: kBottomBarSelectedColor,
-            unselectedItemColor: kBottomBarUnselectedColor,
-            items: const [
-              BottomNavigationBarItem(
-                label: 'Home',
-                icon: Icon(Icons.home),
-              ),
-              BottomNavigationBarItem(
-                label: 'Log Out',
-                icon: Icon(Icons.logout),
-              )
-            ],
-          ),
+              selectedItemColor: kBottomBarSelectedColor,
+              unselectedItemColor: kBottomBarUnselectedColor,
+              items: const [
+                BottomNavigationBarItem(
+                  label: 'Home',
+                  icon: Icon(Icons.home),
+                ),
+                BottomNavigationBarItem(
+                  label: 'Log Out',
+                  icon: Icon(Icons.logout),
+                ),
+              ],
+              currentIndex: _selectedIndex,
+              onTap: (int index) {
+                if (index == 0) {
+                  Navigator.pushNamed(context, '/home');
+                } else {
+                  Navigator.pushNamed(context, '/login');
+                }
+              }),
         ),
       ),
     );

@@ -16,7 +16,7 @@ var kButtonBoxShadow = const BoxShadow(
 
 var kRoundedPersonIconColor = Colors.black; // icon color
 
-var kRoundedPersonBgColor = Colors.grey; // bg color
+var kRoundedPersonBgColor = Colors.blue; // bg color
 
 // Textfield
 
