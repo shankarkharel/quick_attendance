@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_attendance/presentation/screens/login_screen.dart';
 
-import 'home_page.dart';
+import 'presentation/screens/home_screen.dart';
 import 'presentation/screens/register_screen.dart';
 
 void main() {

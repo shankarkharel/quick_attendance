@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_attendance/presentation/components/widgets/rounded_person_icon.dart';
+import 'package:quick_attendance/presentation/screens/qr_view.dart';
 import 'package:quick_attendance/presentation/utils/colors.dart';
 import 'package:quick_attendance/presentation/utils/reusables.dart';
 import 'package:quick_attendance/presentation/utils/styles.dart';
@@ -29,7 +30,11 @@ class HomePage extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: kQRScanButtonBgColor,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const Qrview(),
+            ));
+          },
           child: Icon(
             Icons.qr_code,
             color: kQRScanButtonColor,
@@ -57,7 +62,7 @@ class HomePage extends StatelessWidget {
               onTap: (int index) {
                 if (index == 0) {
                   Navigator.pushNamed(context, '/home');
-                } else {
+                } else if (index == 1) {
                   Navigator.pushNamed(context, '/login');
                 }
               }),
