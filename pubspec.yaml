@@ -37,6 +37,7 @@ dependencies:
   barcode_scan2: ^4.2.1
   qr_flutter: ^3.2.0
   qr_code_scanner: ^0.7.0
+  permission_handler: ^10.0.0
 
 dev_dependencies:
   flutter_test:

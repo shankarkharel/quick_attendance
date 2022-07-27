@@ -1,0 +1,46 @@
+PODS:
+  - barcode_scan2 (0.0.1):
+    - Flutter
+    - MTBBarcodeScanner
+    - SwiftProtobuf
+  - Flutter (1.0.0)
+  - MTBBarcodeScanner (5.0.11)
+  - permission_handler_apple (9.0.4):
+    - Flutter
+  - qr_code_scanner (0.2.0):
+    - Flutter
+    - MTBBarcodeScanner
+  - SwiftProtobuf (1.19.0)
+
+DEPENDENCIES:
+  - barcode_scan2 (from `.symlinks/plugins/barcode_scan2/ios`)
+  - Flutter (from `Flutter`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+  - qr_code_scanner (from `.symlinks/plugins/qr_code_scanner/ios`)
+
+SPEC REPOS:
+  trunk:
+    - MTBBarcodeScanner
+    - SwiftProtobuf
+
+EXTERNAL SOURCES:
+  barcode_scan2:
+    :path: ".symlinks/plugins/barcode_scan2/ios"
+  Flutter:
+    :path: Flutter
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+  qr_code_scanner:
+    :path: ".symlinks/plugins/qr_code_scanner/ios"
+
+SPEC CHECKSUMS:
+  barcode_scan2: 0af2bb63c81b4565aab6cd78278e4c0fa136dbb0
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
+  permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
+  qr_code_scanner: bb67d64904c3b9658ada8c402e8b4d406d5d796e
+  SwiftProtobuf: 6ef3f0e422ef90d6605ca20b21a94f6c1324d6b3
+
+PODFILE CHECKSUM: f9a2c285bf850f6d9743fde4a4ed4494a5139b20
+
+COCOAPODS: 1.11.3
