@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:quick_attendance/presentation/components/widgets/rounded_person_icon.dart';
 import 'package:quick_attendance/presentation/screens/qr_view.dart';
 import 'package:quick_attendance/presentation/utils/colors.dart';
@@ -22,7 +25,7 @@ class HomePage extends StatelessWidget {
               ),
               marginSpace(vertical: 40),
               Text(
-                'Hello, Nishant Pokhrel',
+                'Hello, user',
                 style: kHeaderTextStyle,
               ),
             ],
@@ -30,7 +33,8 @@ class HomePage extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: kQRScanButtonBgColor,
-          onPressed: () {
+          onPressed: () {            checkCamera();
+
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => const Qrview(),
             ));
@@ -69,5 +73,13 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> checkCamera() async {
+    var status = await Permission.camera.status;
+    if (!status.isGranted) {
+      Permission.camera.request();
+      log('Camera permission granted $status');
+    }
   }
 }

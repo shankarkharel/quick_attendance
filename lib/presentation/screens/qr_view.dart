@@ -104,9 +104,9 @@ class _QrviewState extends State<Qrview> {
                         margin: const EdgeInsets.all(8),
                         child: ElevatedButton(
                           onPressed: () async {
-                            await controller?.resumeCamera();
+                            Navigator.pushNamed(context, '/home');
                           },
-                          child: const Text('resume',
+                          child: const Text('back',
                               style: TextStyle(fontSize: 20)),
                         ),
                       )

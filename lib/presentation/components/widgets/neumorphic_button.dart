@@ -2,10 +2,12 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class CustomNeumorphicButton extends StatelessWidget {
   final String screen;
+  final VoidCallback onPressed;
   const CustomNeumorphicButton({
     Key? key,
     required this.formKey,
     required this.screen,
+    required this.onPressed,
   }) : super(key: key);
 
   final GlobalKey<FormState> formKey;
@@ -13,11 +15,8 @@ class CustomNeumorphicButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NeumorphicButton(
-      onPressed: () {
-        if (formKey.currentState!.validate()) {
-          Navigator.pushNamed(context, screen);
-        }
-      },
+      
+      onPressed: onPressed,
       style: const NeumorphicStyle(
         shape: NeumorphicShape.flat,
         color: Colors.blue,
