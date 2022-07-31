@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 import 'models/student.dart';
 
 class Services {
-  static Uri url = Uri.parse('http://localhost/qr_attendance_api/index.php');
+  static Uri url = Uri.parse('http://localhost/TestDB_server/index.php');
   static const _CREATE_TABLE_ACTION = 'CREATE_TABLE';
   static const _GET_ALL_ACTION = 'GET_ALL';
   static const _ADD_STD_ACTION = 'ADD_STD';
@@ -33,18 +33,18 @@ class Services {
     }
   }
 
-  static Future<List<Student>> getStudents() async {
+  static Future<List<Student>>? getStudents() async {
     try {
       var map = Map<String, dynamic>();
       map['action'] = _GET_ALL_ACTION;
       final response = await http.post(url, body: map);
       log('getStudent Response: ${response.body}');
       if (200 == response.statusCode) {
-        List<Student> list = parseResponse(response.body);
+        List<Student>? list = parseResponse(response.body);
         return list;
       } else {
         //return a list litral
-        List<Student> growableList = List<Student>.filled(500,
+        List<Student>? growableList = List<Student>.filled(500,
             Student(roll: '', name: '', email: '', password: '', phone: ''));
         log('growableList: $growableList');
         return growableList;
@@ -84,16 +84,16 @@ class Services {
   }
 
   // Method to update an Student in Database...
-  static Future<String> updateStudent(String roll, String name, String password,
-      String email, String phone) async {
+  static Future<String> updateStudent(String roll, String table) async {
     try {
       var map = Map<String, dynamic>();
       map['action'] = _UPDATE_STD_ACTION;
       map['roll'] = roll;
-      map['name'] = name;
-      map['email'] = email;
-      map['password'] = password;
-      map['phone'] = phone;
+      map['table'] = table;
+      // map['name'] = name;
+      //map['email'] = email;
+      //map['password'] = password;
+      //map['phone'] = phone;
       final response = await http.post(url, body: map);
       print('updateStudent Response: ${response.body}');
       if (200 == response.statusCode) {

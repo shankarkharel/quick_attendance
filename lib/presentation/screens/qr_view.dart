@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:quick_attendance/presentation/screens/autofilled_form.dart';
 
 class Qrview extends StatefulWidget {
   const Qrview({Key? key}) : super(key: key);
@@ -149,7 +150,16 @@ class _QrviewState extends State<Qrview> {
     controller.scannedDataStream.listen((scanData) {
       setState(() {
         result = scanData;
-        log('Scanned ${result!.code}');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AutoFilledForm(
+              qrdata: result!.code.toString(),
+              studentId: "BSE_20180083",
+            ),
+          ),
+        );
+        log('Scanned ${result!.code.toString()}');
       });
     });
   }

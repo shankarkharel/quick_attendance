@@ -33,7 +33,8 @@ class HomePage extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: kQRScanButtonBgColor,
-          onPressed: () {            checkCamera();
+          onPressed: () {
+            checkCamera();
 
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => const Qrview(),
@@ -55,7 +56,7 @@ class HomePage extends StatelessWidget {
               items: const [
                 BottomNavigationBarItem(
                   label: 'Home',
-                  icon: Icon(Icons.home),
+                  icon: Icon(Icons.plus_one),
                 ),
                 BottomNavigationBarItem(
                   label: 'Log Out',
@@ -65,7 +66,7 @@ class HomePage extends StatelessWidget {
               currentIndex: _selectedIndex,
               onTap: (int index) {
                 if (index == 0) {
-                  Navigator.pushNamed(context, '/home');
+                  Navigator.pushNamed(context, '/enroll');
                 } else if (index == 1) {
                   Navigator.pushNamed(context, '/login');
                 }

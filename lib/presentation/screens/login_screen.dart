@@ -37,10 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
   _getStudents() {
     log("inside getstudent");
 
-    Services.getStudents().then((students) {
+    Services.getStudents()!.then((students) {
       {
         _students = students;
-        log("inside getstudent res");
       }
       log("Length ${students.length}");
     });
@@ -51,6 +50,13 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_emailController.text.isEmpty || _passwordController.text.isEmpty) {
       log('Empty Fields');
       return;
+    } else {
+      if (formKey.currentState!.validate() &&
+          _emailController.text.isNotEmpty &&
+          _passwordController.text.isNotEmpty) {
+        log('Valid Fields');
+        Navigator.pushNamed(context, '/home');
+      }
     }
     for (var student in _students) {
       log("${student.email} ${student.password}");
@@ -126,7 +132,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   TextButton(
-                    onPressed: _validate,
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/register');
+                    },
                     child: const Text(
                       "Don't have an Account? Register",
                       style: TextStyle(fontSize: 17),
